@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Moto ID — Admin</title>
+  <link rel="stylesheet" href="/admin.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Moto ID — Admin Panel</h1>
+      <p class="muted">Tek sayfa: Oluştur, Listele, Düzenle</p>
+    </header>
+
+    <nav class="tabs">
+      <button class="tabbtn" data-tab="create">Oluştur</button>
+      <button class="tabbtn" data-tab="list">Liste</button>
+      <button class="tabbtn" data-tab="edit">Düzenle</button>
+    </nav>
+
+  <section class="card tab" id="create">
+      <h2>Yeni Sticker Oluştur</h2>
+      <div class="row">
+        <label>Özel ID (6 rakam, isteğe bağlı)</label>
+        <input id="stickerId" placeholder="ör. 123456" maxlength="6" />
+      </div>
+      <div class="row">
+        <label><input type="checkbox" id="isActive" checked /> Aktif</label>
+      </div>
+      <div class="row actions">
+        <button id="createBtn">Oluştur</button>
+        <button id="autoCreateBtn">Otomatik Oluştur</button>
+      </div>
+      <pre id="createResult" class="result"></pre>
+  </section>
+
+    <section class="card tab" id="list">
+      <h2>Oluşturulan Sticker'lar</h2>
+      <div class="row">
+        <button id="refreshListBtn">Yenile</button>
+      </div>
+      <div id="stickersList" style="margin-top:8px; font-family:monospace; font-size:13px;"></div>
+    </section>
+
+  <section class="card tab" id="edit">
+      <h2>Sticker Düzenle</h2>
+      <div class="row">
+        <label>Seçili ID</label>
+    <input id="editId" />
+      </div>
+      <div class="row">
+        <label>Owner ID (boş = unclaim)</label>
+        <input id="editOwner" />
+      </div>
+      <div class="row">
+        <label>İsim (public)</label>
+        <input id="editName" />
+      </div>
+      <div class="row">
+        <label>Motor Modeli (public)</label>
+        <input id="editBike" />
+      </div>
+      <div class="row">
+        <label><input type="checkbox" id="editActive" /> Aktif</label>
+      </div>
+      <div class="row actions">
+        <button id="saveEditBtn">Kaydet</button>
+      </div>
+      <pre id="editResult" class="result"></pre>
+  </section>
+
+    <footer class="muted">© Moto ID Admin</footer>
+  </div>
+  <script src="/admin.js"></script>
+</body>
+</html>
